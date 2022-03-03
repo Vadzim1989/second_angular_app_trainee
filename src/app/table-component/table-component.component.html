@@ -1,0 +1,53 @@
+<div class="nav">
+    <button (click)="getData('all')">All</button>
+    <button (click)="getData('gomel')">Gomel</button>
+    <button (click)="getData('vetka')">Vetka</button>
+    <button (click)="getData('dobrush')">Dobrush</button>
+</div>
+
+<div class="table_wrapper">
+    <table 
+        class="table"
+        *ngIf="data && data.length > 0"
+        >
+        <thead>
+            <th>id</th>
+            <th>year</th>
+            <th>city</th>
+            <th>name</th>
+            <th>kv</th>
+            <th>kv_pon</th>
+            <th>ta</th>
+            <th>ta_pon</th>
+            <th>byfly</th>
+            <th>zala</th>
+            <th>byfly_zala</th>
+            <th>packet</th>
+            <th>phone</th>
+            <th>vpn</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of data">
+                <td>{{data.id_adr}}</td>
+                <td>{{data.god_vvod}}</td>
+                <td>{{data.zues}}</td>
+                <td>{{data.name_titul}}</td>
+                <td>{{data.kv_all}}</td>
+                <td>{{data.kv_pon}}</td>
+                <td>{{data.ta_all}}</td>
+                <td>{{data.ta_pon}}</td>
+                <td>{{data.byfly_pon}}</td>
+                <td>{{data.zala_pon}}</td>
+                <td>{{data.byfly_zala_pon}}</td>
+                <td>{{data.packet_pon}}</td>
+                <td>{{data.phone_null_pon}}</td>
+                <td>{{data.vpn}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="14"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
